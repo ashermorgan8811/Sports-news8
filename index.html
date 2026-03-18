@@ -161,7 +161,7 @@ function msUntilNext() {
 }
 const DOY = getEditionDay();
 const DATE_LABEL = getEditionLabel();
-const DATE_ISO = new Date().toISOString().slice(0,10); // auto-updated by GitHub Actions
+const DATE_ISO = '2026-03-18'; // auto-updated 2026-03-18
 
 // ── SHUFFLE (deterministic by day) ────────────────────────────────
 function shuffle(arr) {
@@ -244,102 +244,11 @@ const SOC_SCORES = [
 
 // ── LEAD STORIES (rotate — 2 shown per day from pool of 8) ────────
 const ALL_LEADS = [
-  {
-    id:'l1', tag:'NBA', date:'Wednesday, March 18, 2026',
-    hl:"Flagg's 27-Point Triple-Double Lifts Dallas Past Cleveland 130-120",
-    img:'basketball nba court arena', seed:1,
-    paras:[
-      "Cooper Flagg scored 27 points, grabbed six rebounds, and dished 10 assists as the Dallas Mavericks defeated Cleveland 130-120 at Rocket Mortgage FieldHouse on Sunday, per ESPN. It came 48 hours after a 33-point blowout loss to the same Cavaliers team.",
-      "Naji Marshall added 25 and PJ Washington contributed 20 points and 11 rebounds. Donovan Mitchell led Cleveland with 26 points.",
-      "Flagg is the ninth player since the 1977 merger to post 1,000 points, 300 rebounds, and 200 assists in his first 50 games, per Stathead data cited by The Athletic."
-    ],
-    stats:[{n:'27',l:'PTS'},{n:'10',l:'AST'},{n:'6',l:'REB'}],
-    src:['ESPN','The Athletic','Stathead'],
-  },
-  {
-    id:'l2', tag:'F1', date:'Wednesday, March 18, 2026',
-    hl:'Antonelli Wins Chinese GP for First F1 Career Victory as McLaren Misses Start',
-    img:'formula 1 racing circuit track', seed:2,
-    paras:[
-      "Kimi Antonelli claimed his first Formula 1 victory at the 2026 Chinese Grand Prix, finishing in 1:33:15.607 to lead a Mercedes one-two, per Formula1.com. George Russell was second while Lewis Hamilton took third for Ferrari — his first Grand Prix podium for the Scuderia.",
-      "McLaren suffered a catastrophic day: neither Lando Norris nor Oscar Piastri made the start due to electrical issues, per Formula1.com's technical bulletin.",
-      "Antonelli became the second-youngest driver to win a Grand Prix, with only Max Verstappen ahead of him in the record books, per RacingNews365.com."
-    ],
-    stats:[{n:'P1',l:'FINISH'},{n:'19',l:'AGE'},{n:'58',l:'RUSSELL PTS'}],
-    src:['Formula1.com','RacingNews365.com','GPFans.com'],
-  },
-  {
-    id:'l3', tag:'NBA', date:'Wednesday, March 18, 2026',
-    hl:"SGA Shatters Wilt Chamberlain's Record — 128 Straight 20-Point Games",
-    img:'basketball oklahoma city arena', seed:3,
-    paras:[
-      "Shai Gilgeous-Alexander scored 32 points, 8 assists, and 4 steals as the Oklahoma City Thunder defeated Minnesota 116-103, extending his consecutive 20-point streak to 128 — a new NBA record, surpassing Wilt Chamberlain's mark of 126 set in 1961-62, per Basketball-Reference.",
-      "The Thunder improve to 51-15. Their point differential of +721 is the highest in the league by 57 points, per ChampsOrChumps.",
-      "'Records are cool but the goal is the championship. Every night I am just trying to win,' SGA said, per The Athletic."
-    ],
-    stats:[{n:'128',l:'STREAK'},{n:'51-15',l:'OKC RECORD'},{n:'+721',l:'POINT DIFF'}],
-    src:['Basketball-Reference','The Athletic','ChampsOrChumps'],
-  },
-  {
-    id:'l4', tag:'NCAA', date:'Wednesday, March 18, 2026',
-    hl:'2026 NCAA Tournament Bracket Set — Duke is No. 1 Overall Seed, Auburn Misses Field',
-    img:'basketball college arena tournament', seed:4,
-    paras:[
-      "Duke (32-2) earned the No. 1 overall seed, with Arizona, Michigan, and Florida joining the Blue Devils on the top line, per NCAA.org's official bracket announcement on Sunday.",
-      "Auburn missed the field entirely after finishing 17-16 overall and 7-11 in SEC play. Per CBS Sports, Auburn was one of the first four teams out alongside Oklahoma, San Diego State, and Indiana.",
-      "The East Region is the toughest bracket on paper, per KenPom, with UConn, Michigan State, and Kansas all in the same side as Duke."
-    ],
-    stats:[{n:'32-2',l:'DUKE RECORD'},{n:'#1',l:'OVERALL SEED'},{n:'68',l:'TEAMS'}],
-    src:['NCAA.org','CBS Sports','KenPom'],
-  },
-  {
-    id:'l5', tag:'NBA', date:'Wednesday, March 18, 2026',
-    hl:'Wembanyama Posts 42-17-7 in Win Over Golden State — Greatest Big Man Game in NBA History',
-    img:'basketball spurs arena court', seed:5,
-    paras:[
-      "Victor Wembanyama scored 42 points, grabbed 17 rebounds, and blocked 7 shots as the Spurs defeated Golden State 134-108. Per Basketball-Reference, it is the best single-game statistical line by points plus rebounds by any player 7-foot-3 or taller in NBA history.",
-      "Wembanyama shot 15-of-22 from the field and 7-of-12 from three, per NBA.com shot-tracking. He scored 19 of his points in the third quarter.",
-      "'He is from a different planet,' Warriors head coach Steve Kerr said, per NBC Sports."
-    ],
-    stats:[{n:'42',l:'PTS'},{n:'17',l:'REB'},{n:'7',l:'BLK'}],
-    src:['Basketball-Reference','NBA.com','NBC Sports'],
-  },
-  {
-    id:'l6', tag:'NFL', date:'Wednesday, March 18, 2026',
-    hl:'Takeaways from Opening Week of NFL Free Agency: Biggest Signings for All 32 Teams',
-    img:'nfl football stadium field', seed:6,
-    paras:[
-      "The first wave of NFL free agency is complete and the league looks different heading into the 2026 season. Several quarterbacks changed teams, multiple pass rushers landed massive deals, and three Super Bowl contenders made significant moves to address roster holes.",
-      "The biggest signing of the first week was a defensive tackle commanding $28M per year — the highest ever for an interior lineman. Multiple division favorites lost key players to division rivals.",
-      "Per ESPN's Adam Schefter and Field Yates, the total free agency spending in the first 72 hours set a new NFL record."
-    ],
-    stats:[{n:'72hrs',l:'FIRST WAVE'},{n:'32',l:'TEAMS ACTIVE'},{n:'$28M',l:'TOP AAV'}],
-    src:['ESPN (Adam Schefter)','Field Yates','NFL Network'],
-  },
-  {
-    id:'l7', tag:'EPL', date:'Wednesday, March 18, 2026',
-    hl:'Liverpool Six Points Clear With Seven Games Left — Title Is Theirs to Lose',
-    img:'soccer liverpool anfield stadium', seed:7,
-    paras:[
-      "Liverpool drew 1-1 with Tottenham at Anfield on Sunday, dropping two points but remaining six clear of Arsenal with seven games to play, per the official Premier League table.",
-      "Mohamed Salah's 23rd league goal gave Liverpool the lead before Heung-min Son equalized in the 61st minute. Per Opta, Liverpool have a 94% probability of winning the title from this position.",
-      "Per LFCHistory.net, Salah's goal was his 17th at Anfield this season — a new club record."
-    ],
-    stats:[{n:'+6',l:'POINTS CLEAR'},{n:'94%',l:'TITLE PROB'},{n:'7',l:'GAMES LEFT'}],
-    src:['Premier League official','Opta','BBC Sport'],
-  },
-  {
-    id:'l8', tag:'MLB', date:'Wednesday, March 18, 2026',
-    hl:'Spring Training Report: Five Prospects Who Have Already Earned Opening Day Roster Spots',
-    img:'baseball spring training diamond', seed:8,
-    paras:[
-      "Spring training is more than a month old and five prospects have played themselves onto Opening Day rosters with performances that could not be ignored. The list spans multiple franchises and positions.",
-      "The most surprising inclusion is a 21-year-old shortstop from the Yankees organization who hit .420 in Grapefruit League play with four home runs and showed elite defensive range that prompted the team to trade their incumbent starter.",
-      "Per Baseball America and The Athletic's baseball desk, all five players ranked outside the top 50 prospects entering camp."
-    ],
-    stats:[{n:'5',l:'PROSPECTS'},{n:'.420',l:'TOP AVG'},{n:'4 HR',l:'LEADER'}],
-    src:['Baseball America','The Athletic','MLB Pipeline'],
-  },
+  {id:'live_0',tag:'NBA · Today',date:'Wednesday, March 18, 2026',query:'basketball nba arena game action',seed:77,headline:'NBA Power Rankings: Sixth men, rookies and unsung heroes for all 30 teams',deck:'From rookies, veterans and Sixth Man of the Year candidates, NBA insiders break down each team\'s unsung hero this season....',body:['From rookies, veterans and Sixth Man of the Year candidates, NBA insiders break down each team\'s unsung hero this season.','Source: ESPN NBA.'],sources:[{o:'ESPN NBA',d:'Live RSS feed'}]},
+  {id:'live_1',tag:'F1 · Today',date:'Wednesday, March 18, 2026',query:'formula 1 racing car track speed',seed:78,headline:'Racing around Cowboys\', Rangers\' stadiums was just what IndyCar needed',deck:'Racing around the homes of the Cowboys and Rangers made IndyCar\'s Grand Prix of Arlington the signature event that the sport has been desper...',body:['Racing around the homes of the Cowboys and Rangers made IndyCar\'s Grand Prix of Arlington the signature event that the sport has been desperate for.','Source: ESPN F1.'],sources:[{o:'ESPN F1',d:'Live RSS feed'}]},
+  {id:'live_2',tag:'EPL · Today',date:'Wednesday, March 18, 2026',query:'soccer football stadium crowd match',seed:79,headline:'Champions League live updates: Liverpool lead on aggregate vs. Galatasaray',deck:'Liverpool lead against Galatasaray, while Atlético Madrid look to extend their lead against Tottenham as both teams look to advance in the U...',body:['Liverpool lead against Galatasaray, while Atlético Madrid look to extend their lead against Tottenham as both teams look to advance in the UEFA Champions League.','Source: ESPN Soccer.'],sources:[{o:'ESPN Soccer',d:'Live RSS feed'}]},
+  {id:'live_3',tag:'NCAA · Today',date:'Wednesday, March 18, 2026',query:'basketball college arena crowd',seed:80,headline:'Coaches predict the men\'s NCAA tournament champion, potential Cinderellas, more',deck:'There was one clear favorite among the 25 coaches polled. Here are their takes on seven contenders and more....',body:['There was one clear favorite among the 25 coaches polled. Here are their takes on seven contenders and more.','Source: ESPN NCAAB.'],sources:[{o:'ESPN NCAAB',d:'Live RSS feed'}]},
+  {id:'live_4',tag:'NFL · Today',date:'Wednesday, March 18, 2026',query:'american football stadium crowd field',seed:81,headline:'NFL free agency grades: Sizing up 60-plus big signings and trades',deck:'We\'re handing out report cards on big moves, including trades for Jaylen Waddle and Justin Fields....',body:['We\'re handing out report cards on big moves, including trades for Jaylen Waddle and Justin Fields.','Source: ESPN NFL.'],sources:[{o:'ESPN NFL',d:'Live RSS feed'}]}
 ];
 
 // ── WHAT-IF STORIES (rotate — 1 shown per day) ────────────────────
